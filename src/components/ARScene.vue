@@ -5,7 +5,7 @@
       style="height: 100%; width: 100%;"
   >
     <a-assets>
-      <a-asset-item id="teapot-model" src="https://dainty-choux-81d08f.netlify.app/public/Card.gltf"></a-asset-item>
+      <a-asset-item id="teapot-model" src="https://jovial-travesseiro-4fc45a.netlify.app/public/Card.gltf"></a-asset-item>
     </a-assets>
 
     <a-marker preset="custom" type="pattern" url="./assets/marker.patt">
