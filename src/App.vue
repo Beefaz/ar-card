@@ -5,7 +5,7 @@
       <a-entity
           position="0 0 0"
           scale="0.05 0.05 0.05"
-          gltf-model="https://jovial-travesseiro-4fc45a.netlify.app/public/Card.gltf"
+          gltf-model="url(https://jovial-travesseiro-4fc45a.netlify.app/public/Card.gltf)"
       ></a-entity>
     </a-marker>
     <a-entity camera></a-entity>
