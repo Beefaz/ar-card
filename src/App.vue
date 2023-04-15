@@ -3,8 +3,8 @@
     <a-marker preset="hiro">
       <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
       <a-entity
-          position="0 0 0"
-          scale="0.05 0.05 0.05"
+          position="1 1 1"
+          scale="1 1 1"
           gltf-model="url(https://jovial-travesseiro-4fc45a.netlify.app/public/Card.gltf)"
       ></a-entity>
     </a-marker>
