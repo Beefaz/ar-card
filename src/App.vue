@@ -1,38 +1,15 @@
 <template>
-  <div/>
-<!--  <a-scene embedded arjs>-->
-<!--    <a-marker preset="hiro">-->
-<!--&lt;!&ndash;       we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server &ndash;&gt;-->
-<!--      <a-entity-->
-<!--          position="0 0 0"-->
-<!--          scale="0.01 0.01 0.01"-->
-<!--          gltf-model="url(https://jovial-travesseiro-4fc45a.netlify.app/public/Card.gltf)"-->
-<!--      ></a-entity>-->
+  <a-scene vr-mode-ui="enabled: false;" loading-screen="enabled: false;" renderer="logarithmicDepthBuffer: true;" arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" id="scene" embedded="" gesture-detector="" inspector="" keyboard-shortcuts="" screenshot="" device-orientation-permission-ui="">
+    <a-assets>
+      <a-asset-item id="animated-asset" src="assets/untitled.gltf"></a-asset-item>
+    </a-assets>
 
-<!--      <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>-->
-<!--    </a-marker>-->
-<!--    <a-entity camera></a-entity>-->
-<!--  </a-scene>-->
-<!--  <a-scene-->
-<!--      embedded-->
-<!--      arjs="sourceType: webcam; debugUIEnabled: false;"-->
-<!--      style="height: 100%; width: 100%;"-->
-<!--  >-->
-<!--    <a-assets>-->
-<!--      <a-asset-item id="teapot-model" src="https://jovial-travesseiro-4fc45a.netlify.app/public/Card.gltf"></a-asset-item>-->
-<!--    </a-assets>-->
+    <a-marker-camera id="animated-marker" type="pattern" preset="custom" url="assets/marker.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+      <a-entity id="bowser-model" scale="0.3596762464186923 0.3596762464186923 0.3596762464186923" animation-mixer="loop: repeat" gltf-model="#animated-asset" class="clickable" gesture-handler=""></a-entity>
+    </a-marker-camera>
 
-<!--    <a-marker preset="custom" type="pattern" url="https://jovial-travesseiro-4fc45a.netlify.app/public/marker.patt">-->
-<!--      <a-entity-->
-<!--          gltf-model="#teapot-model"-->
-<!--          scale="0.01 0.01 0.01"-->
-<!--          position="0 0 0"-->
-<!--      ></a-entity>-->
-<!--    </a-marker>-->
-
-<!--    <a-entity camera></a-entity>-->
-<!--  </a-scene>-->
-
+    <canvas class="a-canvas" data-aframe-canvas="true" width="330" height="165"></canvas>
+  </a-scene>
 </template>
 
 <script>

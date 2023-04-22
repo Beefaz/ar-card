@@ -10,32 +10,6 @@
       <script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
   </head>
   <body>
-<!--  <a-scene embedded arjs>-->
-<!--      <a-assets>-->
-<!--          <a-asset-item id="tree" src="untitled.gltf"></a-asset-item>-->
-<!--      </a-assets>-->
-
-<!--      <a-entity gltf-model="#tree" scale="0.5 0.5 0.5"></a-entity>-->
-<!--      <a-marker-camera preset='hiro'></a-marker-camera>-->
-<!--  </a-scene>-->
-  <a-scene vr-mode-ui="enabled: false;" loading-screen="enabled: false;" renderer="logarithmicDepthBuffer: true;" arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" id="scene" embedded="" gesture-detector="" inspector="" keyboard-shortcuts="" screenshot="" device-orientation-permission-ui="">
-      <a-assets>
-          <a-asset-item id="animated-asset" src="untitled.gltf"></a-asset-item>
-      </a-assets>
-
-      <a-marker-camera id="animated-marker" type="pattern" preset="custom" url="marker.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-          <a-entity id="bowser-model" scale="0.3596762464186923 0.3596762464186923 0.3596762464186923" animation-mixer="loop: repeat" gltf-model="#animated-asset" class="clickable" gesture-handler=""></a-entity>
-      </a-marker-camera>
-
-      <canvas class="a-canvas" data-aframe-canvas="true" width="330" height="165"></canvas>
-  </a-scene>
-<!--  <a-scene embedded arjs>-->
-<!--      -->
-<!--      &lt;!&ndash; create your content here. just a box for now &ndash;&gt;-->
-<!--      <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>-->
-<!--      &lt;!&ndash; define a camera which will move according to the marker position &ndash;&gt;-->
-<!--      <a-marker-camera preset='hiro'></a-marker-camera>-->
-<!--  </a-scene>-->
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
