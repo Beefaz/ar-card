@@ -1,21 +1,5 @@
 <template>
-  <div v-if="mounted">
-    <a-scene vr-mode-ui="enabled: false;" loading-screen="enabled: false;" renderer="logarithmicDepthBuffer: true;"
-             arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" id="scene" embedded=""
-             gesture-detector="" inspector="" keyboard-shortcuts="" screenshot="" device-orientation-permission-ui="">
-      <a-assets>
-        <a-asset-item id="animated-asset" src="assets/untitled.gltf"></a-asset-item>
-      </a-assets>
-
-      <a-marker-camera id="animated-marker" type="pattern" preset="custom" url="assets/marker.patt"
-                       raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-        <a-entity id="bowser-model" animation-mixer="loop: repeat"
-                  class="clickable" gesture-handler="" gltf-model="#animated-asset"
-                  scale="0.3596762464186923 0.3596762464186923 0.3596762464186923"></a-entity>
-      </a-marker-camera>
-
-      <canvas class="a-canvas" data-aframe-canvas="true" width="330" height="165"></canvas>
-    </a-scene>
+  <div>
   </div>
 </template>
 
@@ -25,15 +9,17 @@ export default {
   name: 'App',
   data() {
     return {
-      mounted: false,
     }
   },
-  mounted() {
+  created() {
     // Set the camera position and rotation
-    // const camera = document.querySelector("[camera]");
-    // camera.setAttribute("position", "0 0 0");
-    // camera.setAttribute("rotation", "0 0 0");
-    this.mounted = true;
+    const marker = document.querySelector("a-marker");
+    marker.addEventListener ('markerFound', function () {
+      if(marker.object3D.visible === true){
+        const model = document.querySelector("a-entity");
+        model.setAttribute("animation-mixer", "")
+      }
+    });
   },
 };
 </script>
@@ -43,7 +29,15 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: rgba(255,0,0, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>
